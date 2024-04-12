@@ -1,8 +1,20 @@
 {
   "name": "qds-common-components",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.14",
   "type": "module",
+  "private": false,
+  "description": "qds-common-components",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/qds-common-components.umd.js",
+  "module": "./dist/qds-common-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/qds-common-components.es.js",
+      "require": "./dist/qds-common-components.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

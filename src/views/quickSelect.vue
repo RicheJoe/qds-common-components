@@ -35,14 +35,14 @@
     <div class="right">
       <div class="header">
         <div v-if="niceClassedList.length" class="choice">
-          已选<font>{{ niceClassedList.length }}</font
-          >类,共 <font>{{ subNumber }}</font
-          >小项,预计费用 <font>{{ totalItemNumber * (welfare ? 27 : 32) }}</font
+          已选<span>{{ niceClassedList.length }}</span
+          >类,共 <span>{{ subNumber }}</span
+          >小项,预计费用 <span>{{ totalItemNumber * 32 }}</span
           >元
         </div>
         <div v-else>已选商标类别</div>
         <div>
-          <span class="tips">超过10项每加1项加{{ welfare ? 27 : 32 }}元</span>
+          <span class="tips">超过10项每加1项加32元</span>
           <span @click="clearAll" class="clearAll">清空已选</span>
         </div>
       </div>
@@ -62,7 +62,7 @@
               >
               <span>
                 已选
-                <font>{{ first.cgNumber }}</font
+                <span>{{ first.cgNumber }}</span
                 >项
               </span>
               <i
@@ -98,7 +98,7 @@
 <script setup>
 import { ref, reactive, onMounted, watch } from "vue";
 import { niceAllType, queryNiceListByFirst, queryNiceListByName } from "@/API/base-data.js";
-import { ElMessage, ElMessageBox } from "element-plus";
+import { ElMessage, ElMessageBox, ElInput, ElTree } from "element-plus";
 
 const filterText = ref("");
 const niceData = ref([]);
@@ -362,25 +362,16 @@ watch(
   },
   { deep: true }
 );
-// watch(
-//   () => niceClassedList,
-//   val => {
-//     totalItemNumber.value = 0;
-//     console.log("watch", val);
-//     val.forEach(item => {
-//       if (item.cgNumber && item.cgNumber <= 10) {
-//         totalItemNumber.value += 10;
-//       } else {
-//         totalItemNumber.value += item.cgNumber;
-//       }
-//     });
-//   }
-// );
 onMounted(() => {
   queryNiceAllType();
 });
 </script>
 
+<script>
+export default {
+  name: "quickSelect"
+};
+</script>
 <style scoped lang="scss">
 .nice-classify-wrapper {
   width: 1200px;
