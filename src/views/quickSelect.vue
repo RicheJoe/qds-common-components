@@ -372,7 +372,7 @@ export default {
   name: "quickSelect"
 };
 </script>
-<style scoped lang="scss">
+<style  scoped lang="scss">
 .nice-classify-wrapper {
   width: 1200px;
   border: 1px solid #ccc;
@@ -384,6 +384,7 @@ export default {
     color: #ff7200;
   }
   .left {
+    float: left;
     width: 280px;
     border-right: 1px solid #ccc;
     .search-btn {
@@ -459,6 +460,7 @@ export default {
     }
   }
   .right {
+    float: right;
     flex: 1;
     .tips {
       color: #999;

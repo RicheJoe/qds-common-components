@@ -1,6 +1,6 @@
 {
   "name": "qds-common-components",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "type": "module",
   "private": false,
   "description": "qds-common-components",
@@ -26,6 +26,7 @@
     "element-plus": "^2.6.3",
     "pinia": "^2.1.7",
     "sass": "^1.75.0",
+    "vite-plugin-css-injected-by-js": "^3.5.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
